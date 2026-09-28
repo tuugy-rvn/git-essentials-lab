@@ -1,16 +1,15 @@
 package library;
 
 public class LoanPolicy {
-<<<<<<< HEAD
-    public int maxBooks(MemberType type) { return type == MemberType.STUDENT ? 3 : 2; }
-=======
     public int maxBooks(MemberType type) {
-    if (type == MemberType.STUDENT) {
-        return 3;
+        return type == MemberType.STUDENT ? 3 : 5;
     }
-    return 5;
-}
->>>>>>> lab-v1/final/faculty
-    public int loanDays() { return 14; }
-    public int overdueFee(int daysLate) { return daysLate * 100; }
+
+    public int loanDays() {
+        return 14;
+    }
+
+    public int overdueFee(int daysLate) {
+        return Math.max(0, daysLate) * 100;
+    }
 }
